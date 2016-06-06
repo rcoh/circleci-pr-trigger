@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+  <form action="{{ url_for('do_configure') }}" method=post class=add-entry>
+
+      Circle CI API Key
+      <input type=text size=30 name=circle_ci_token value="{{ circle_ci_token or '' }}">
+      Repo path (owner/repo)
+      <input type=text size=30 name=owner value="{{ owner or '' }}">
+      <input type=text size=30 name=repo value="{{ repo or '' }}">
+      <input type=submit value=Save>
+    
+  </form>
+{% endblock %}
